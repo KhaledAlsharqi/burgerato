@@ -40,6 +40,7 @@
   "hasMenu": "https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762",
   "geo": {"@type": "GeoCoordinates", "latitude": 24.323836, "longitude": 54.619407},
   "aggregateRating": {"@type": "AggregateRating", "ratingValue": 4.8, "bestRating": 5, "ratingCount": 130},
+  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "13:00", "closes": "02:00"}],
   "sameAs": ["https://www.talabat.com/ar/uae/restaurant/734212/burgerato", "https://www.zomato.com/abudhabi/burgerato-restaurant-baniyas"]
 }
 </script>
@@ -458,7 +459,7 @@
       <div class="head"><span class="idx reveal">٠٥ — أسئلة شائعة</span><h2 class="gold-text reveal">كل ما تريد معرفته</h2></div>
       <details><summary>هل التوصيل متاح؟ وكم رسومه؟</summary><div class="fa">نعم — التوصيل حول بني ياس وضواحيها عبر <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">طلبات</a> (التوصيل مجاني حالياً وبلا حد أدنى للطلب)، أو مباشرة عبر <a href="https://wa.me/971505882658" target="_blank" rel="noopener">واتساب المطعم</a>.</div></details>
       <details><summary>كم سعر وجبة السماش برجر؟</summary><div class="fa">٣٢ درهماً وجبة كاملة — برجر سماش طبقتين مع البطاط والمشروب الغازي. وتجد أسعار كل الأصناف في <a href="#menu">المنيو أعلاه</a>.</div></details>
-      <details><summary>أين يقع المطعم؟ ومتى يفتح؟</summary><div class="fa">شارع المويجعي — شارع الناير، بني ياس شرق، أبوظبي — مفتوح يومياً حتى ٢:٠٠ صباحاً. <a href="https://www.google.com/maps/search/?api=1&query=24.323836%2C54.619407" target="_blank" rel="noopener">اضغط هنا للاتجاهات عبر خرائط جوجل</a>.</div></details>
+      <details><summary>أين يقع المطعم؟ ومتى يفتح؟</summary><div class="fa">شارع المويجعي — شارع الناير (قرب بوابة الشرق)، بني ياس شرق، أبوظبي. مفتوح يومياً من ١:٠٠ ظهراً حتى ٢:٠٠ فجراً. <a href="https://www.google.com/maps/search/?api=1&query=24.323836%2C54.619407" target="_blank" rel="noopener">اضغط هنا للاتجاهات عبر خرائط جوجل</a>.</div></details>
       <details><summary>كيف أطلب؟</summary><div class="fa">ثلاث طرق: <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">تطبيق طلبات</a>، أو واتساب <a href="https://wa.me/971505882658" target="_blank" rel="noopener" dir="ltr">050 588 2658</a>، أو اتصال مباشر <a href="tel:+97125858495" dir="ltr">02 585 84 95</a>.</div></details>
     </div>
   </section>
@@ -467,7 +468,7 @@
     <img src="assets/logo-full.webp" alt="برجراتو — Burgerato Restaurant" style="height:96px;width:auto;margin-inline:auto;display:block" loading="lazy" />
     <div class="info">
       <span class="rate"><b>★ ٤٫٨</b> على جوجل · <b>★ ٤٫٢</b> على طلبات</span>
-      <span>🕐 يومياً حتى ٢:٠٠ صباحاً</span>
+      <span id="hoursChip">🕐 يومياً ١:٠٠ م – ٢:٠٠ ص</span>
       <a href="https://www.google.com/maps/search/?api=1&query=24.323836%2C54.619407" target="_blank" rel="noopener">📍 شارع المويجعي — بني ياس شرق · الاتجاهات</a>
       <a href="tel:+97125858495" dir="ltr">02 585 84 95</a>
       <a href="https://wa.me/971505882658" target="_blank" rel="noopener">واتساب المطعم</a>
@@ -637,6 +638,18 @@
       ScrollTrigger.create({trigger:sec,start:"top center",onEnter:start,onEnterBack:start});
       ScrollTrigger.create({trigger:sec,start:"top top",end:"bottom bottom",scrub:true,onUpdate:s=>{const p=s.progress;dim.style.opacity=smooth(0.34,0.66,p);content.style.opacity=smooth(0.40,0.72,p);content.style.transform="translateY("+(28*(1-smooth(0.40,0.72,p)))+"px)";}});
     } else {dim.style.opacity=.94;content.style.opacity=1;content.style.transform="none";}
+  })();
+
+  // live "open now" chip — hours: daily 13:00–02:00 Asia/Dubai
+  (function openNow(){
+    const el=document.getElementById("hoursChip"); if(!el)return;
+    try{
+      const h=parseInt(new Intl.DateTimeFormat("en-GB",{hour:"2-digit",hour12:false,timeZone:"Asia/Dubai"}).format(new Date()),10);
+      const open=(h>=13||h<2);
+      el.innerHTML=open
+        ?'<span style="color:#7DC97F">●</span> مفتوح الآن — يومياً ١:٠٠ م حتى ٢:٠٠ ص'
+        :'<span style="color:#C4502E">●</span> مغلق الآن — يفتح ١:٠٠ ظهراً';
+    }catch(e){}
   })();
 
   if(hasGSAP){window.addEventListener("load",()=>ScrollTrigger.refresh());if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>ScrollTrigger.refresh());}
