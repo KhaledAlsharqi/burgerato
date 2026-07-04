@@ -459,12 +459,12 @@
     <div class="wrap">
       <div class="head"><span class="idx reveal">03 — The Heroes</span><h2 class="gold-text reveal">More Heroes on the Griddle</h2></div>
       <div class="cards">
-        <article class="ed-card reveal"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="Burgerato Smash" loading="lazy" /></div>
-          <div class="body"><h3>Burgerato Smash</h3><p>The hero itself — two patties, molten cheddar, secret sauce.</p><span class="tag">Meal · AED 32</span></div></article>
-        <article class="ed-card reveal"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="Mushroom Hashi Burgerato" loading="lazy" /></div>
-          <div class="body"><h3>Mushroom Hashi Burgerato</h3><p>Fresh camel meat under a creamy mushroom-onion sauce — crowned with our signature mayo dots.</p><span class="tag">Meal · AED 45</span></div></article>
-        <article class="ed-card reveal"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="The Two Heroes Combo" loading="lazy" /></div>
-          <div class="body"><h3>The Two Heroes Combo</h3><p>Smash + Mushroom Hashi together — for serious hunger.</p><span class="tag">Two meals · AED 77</span></div></article>
+        <article class="ed-card reveal" data-cart-add="smash" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="Burgerato Smash" loading="lazy" /></div>
+          <div class="body"><h3>Burgerato Smash</h3><p>The hero itself — two patties, molten cheddar, secret sauce.</p><span class="tag">Meal · AED 32 · Tap to order</span></div></article>
+        <article class="ed-card reveal" data-cart-add="1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="Mushroom Hashi Burgerato" loading="lazy" /></div>
+          <div class="body"><h3>Mushroom Hashi Burgerato</h3><p>Fresh camel meat under a creamy mushroom-onion sauce — crowned with our signature mayo dots.</p><span class="tag">Meal · AED 45 · Tap to order</span></div></article>
+        <article class="ed-card reveal" data-cart-add="smash,1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="The Two Heroes Combo" loading="lazy" /></div>
+          <div class="body"><h3>The Two Heroes Combo</h3><p>Smash + Mushroom Hashi together — for serious hunger.</p><span class="tag">Two meals · AED 77 · Tap to order</span></div></article>
       </div>
     </div>
   </section>
@@ -626,11 +626,13 @@
     if(!tabs||!grid)return;
     function build(){
       if(typeof BURGERATO_MENU_EN==="undefined"){setTimeout(build,150);return;}
+      var HEROES={cat:"⭐ Heroes",items:[{id:"smash",name:"Smash Burgerato Meal",desc:"Two fresh patties, molten cheddar and our secret sauce — with fries and a drink",price:32,oldPrice:-1,hasImg:true}]};
+      var MENUX=[HEROES].concat(BURGERATO_MENU_EN);
       const num=n=>String(n);
       let active=0;
       function renderTabs(){
         tabs.innerHTML="";
-        BURGERATO_MENU_EN.forEach((c,i)=>{
+        MENUX.forEach((c,i)=>{
           const b=document.createElement("button");
           b.className="mtab"+(i===active?" on":""); b.type="button"; b.setAttribute("role","tab");
           b.textContent=c.cat; b.addEventListener("click",()=>{active=i;renderTabs();renderGrid();});
@@ -639,7 +641,7 @@
       }
       function renderGrid(){
         grid.innerHTML="";
-        BURGERATO_MENU_EN[active].items.forEach(it=>{
+        MENUX[active].items.forEach(it=>{
           const card=document.createElement("article"); card.className="mcard";
           let pic="";
           if(it.hasImg) pic='<div class="mpic"><img loading="lazy" src="assets/menu/'+it.id+'.jpg" alt="'+it.name.replace(/"/g,"")+'" onerror="this.style.display=\'none\'"/></div>';

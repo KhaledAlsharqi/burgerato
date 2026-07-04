@@ -375,6 +375,14 @@
   var hero = document.querySelector("#hero .hero-order");
   if (hero) hero.addEventListener("click", function (e) { e.preventDefault(); add("smash"); open(); });
 
+  /* بطاقات الأبطال: إضافة مباشرة وفتح الدرج */
+  document.querySelectorAll("[data-cart-add]").forEach(function (el) {
+    function go() { el.dataset.cartAdd.split(",").forEach(function (id) { add(id.trim()); }); open(); }
+    el.addEventListener("click", go);
+    el.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    el.style.cursor = "pointer";
+  });
+
   /* .js-order → افتح الدرج */
   document.querySelectorAll(".js-order").forEach(function (el) {
     el.addEventListener("click", function (e) { e.preventDefault(); open(); });

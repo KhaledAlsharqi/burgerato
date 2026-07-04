@@ -120,12 +120,12 @@ R += [
 R += [
  ('<div class="head"><span class="idx reveal">٠٣ — القائمة</span><h2 class="gold-text reveal">أبطالٌ آخرون على الصاج</h2></div>',
   '<div class="head"><span class="idx reveal">03 — The Heroes</span><h2 class="gold-text reveal">More Heroes on the Griddle</h2></div>'),
- ('<article class="ed-card reveal"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="سماش برجراتو" loading="lazy" /></div>\n          <div class="body"><h3>سماش برجراتو</h3><p>البطل نفسه — طبقتان، شيدر ذائب، وصوص سرّي.</p><span class="tag">وجبة · ٣٢ د.إ</span></div></article>',
-  '<article class="ed-card reveal"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="Burgerato Smash" loading="lazy" /></div>\n          <div class="body"><h3>Burgerato Smash</h3><p>The hero itself — two patties, molten cheddar, secret sauce.</p><span class="tag">Meal · AED 32</span></div></article>'),
- ('<article class="ed-card reveal"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="حاشي برجراتو بالمشروم" loading="lazy" /></div>\n          <div class="body"><h3>حاشي برجراتو بالمشروم</h3><p>لحم حاشي طازج تحت صوص المشروم والبصل الكريمي — وتاج المايونيز علامتنا.</p><span class="tag">وجبة · ٤٥ د.إ</span></div></article>',
-  '<article class="ed-card reveal"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="Mushroom Hashi Burgerato" loading="lazy" /></div>\n          <div class="body"><h3>Mushroom Hashi Burgerato</h3><p>Fresh camel meat under a creamy mushroom-onion sauce — crowned with our signature mayo dots.</p><span class="tag">Meal · AED 45</span></div></article>'),
- ('<article class="ed-card reveal"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="كومبو البطلين" loading="lazy" /></div>\n          <div class="body"><h3>كومبو البطلين</h3><p>سماش + حاشي المشروم معاً — للجوع الجماعي.</p><span class="tag">وجبتان · ٧٧ د.إ</span></div></article>',
-  '<article class="ed-card reveal"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="The Two Heroes Combo" loading="lazy" /></div>\n          <div class="body"><h3>The Two Heroes Combo</h3><p>Smash + Mushroom Hashi together — for serious hunger.</p><span class="tag">Two meals · AED 77</span></div></article>'),
+ ('<article class="ed-card reveal" data-cart-add="smash" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="سماش برجراتو" loading="lazy" /></div>\n          <div class="body"><h3>سماش برجراتو</h3><p>البطل نفسه — طبقتان، شيدر ذائب، وصوص سرّي.</p><span class="tag">وجبة · ٣٢ د.إ · اضغط للطلب</span></div></article>',
+  '<article class="ed-card reveal" data-cart-add="smash" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="Burgerato Smash" loading="lazy" /></div>\n          <div class="body"><h3>Burgerato Smash</h3><p>The hero itself — two patties, molten cheddar, secret sauce.</p><span class="tag">Meal · AED 32 · Tap to order</span></div></article>'),
+ ('<article class="ed-card reveal" data-cart-add="1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="حاشي برجراتو بالمشروم" loading="lazy" /></div>\n          <div class="body"><h3>حاشي برجراتو بالمشروم</h3><p>لحم حاشي طازج تحت صوص المشروم والبصل الكريمي — وتاج المايونيز علامتنا.</p><span class="tag">وجبة · ٤٥ د.إ · اضغط للطلب</span></div></article>',
+  '<article class="ed-card reveal" data-cart-add="1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="Mushroom Hashi Burgerato" loading="lazy" /></div>\n          <div class="body"><h3>Mushroom Hashi Burgerato</h3><p>Fresh camel meat under a creamy mushroom-onion sauce — crowned with our signature mayo dots.</p><span class="tag">Meal · AED 45 · Tap to order</span></div></article>'),
+ ('<article class="ed-card reveal" data-cart-add="smash,1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="كومبو البطلين" loading="lazy" /></div>\n          <div class="body"><h3>كومبو البطلين</h3><p>سماش + حاشي المشروم معاً — للجوع الجماعي.</p><span class="tag">وجبتان · ٧٧ د.إ · اضغط للطلب</span></div></article>',
+  '<article class="ed-card reveal" data-cart-add="smash,1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="The Two Heroes Combo" loading="lazy" /></div>\n          <div class="body"><h3>The Two Heroes Combo</h3><p>Smash + Mushroom Hashi together — for serious hunger.</p><span class="tag">Two meals · AED 77 · Tap to order</span></div></article>'),
 ]
 
 # ---------- menu section ----------
@@ -182,8 +182,7 @@ R += [
 R += [
  ('<script src="assets/menu-data.js" defer></script>', '<script src="assets/menu-data-en.js" defer></script>'),
  ('if(typeof BURGERATO_MENU==="undefined"){setTimeout(build,150);return;}', 'if(typeof BURGERATO_MENU_EN==="undefined"){setTimeout(build,150);return;}'),
- ('BURGERATO_MENU.forEach((c,i)=>{', 'BURGERATO_MENU_EN.forEach((c,i)=>{'),
- ('BURGERATO_MENU[active].items.forEach(it=>{', 'BURGERATO_MENU_EN[active].items.forEach(it=>{'),
+ ('var MENUX=[HEROES].concat(BURGERATO_MENU);', 'var MENUX=[HEROES].concat(BURGERATO_MENU_EN);'),
  ("const AR=\"٠١٢٣٤٥٦٧٨٩\";\n      const num=n=>String(n).replace(/\\d/g,d=>AR[+d]);", "const num=n=>String(n);"),
  ("'<span class=\"mold\">'+num(it.oldPrice)+'</span><span class=\"moff\">خصم</span>'", "'<span class=\"mold\">'+num(it.oldPrice)+'</span><span class=\"moff\">OFF</span>'"),
  ("'<div class=\"mrow\"><span class=\"mprice\">'+num(it.price)+' د.إ</span>'", "'<div class=\"mrow\"><span class=\"mprice\">AED '+num(it.price)+'</span>'"),
@@ -208,6 +207,12 @@ LTR_CSS = """
 """
 R += [("\n</style>", LTR_CSS + "\n</style>")]
 
+
+# ---------- heroes virtual tab ----------
+R += [
+ ('var HEROES={cat:"⭐ الأبطال",items:[{id:"smash",name:"وجبة سماش برجراتو",desc:"طبقتان من اللحم الطازج، شيدر ذائب، وصوص سرّي — مع البطاط والمشروب",price:32,oldPrice:-1,hasImg:true}]};',
+  'var HEROES={cat:"⭐ Heroes",items:[{id:"smash",name:"Smash Burgerato Meal",desc:"Two fresh patties, molten cheddar and our secret sauce — with fries and a drink",price:32,oldPrice:-1,hasImg:true}]};'),
+]
 
 # ---------- cart / WhatsApp-first ordering ----------
 R += [
