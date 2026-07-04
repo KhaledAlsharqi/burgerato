@@ -20,6 +20,9 @@
     upsell: "Completes your order 👌",
     sent: "Sent? The restaurant will confirm shortly on WhatsApp.",
     viewCart: "View basket", msgTitle: "*New order — Burgerato*",
+    gps: "📍 Attach my location (GPS)", gpsOk: "📍 Location attached ✓",
+    gpsWait: "Locating…", gpsErr: "Couldn't get location — check permission",
+    gpsAcc: "accuracy", msgMap: "📍 Map", remove: "✕",
     msgRef: "Order ref", msgTotal: "Estimated total", msgName: "Name",
     msgArea: "Area/Address", msgNote: "Notes",
     msgFoot: "(official menu prices — restaurant confirms total & delivery fee)",
@@ -36,6 +39,9 @@
     upsell: "يكمّل طلبك 👌",
     sent: "أرسلت الطلب؟ سيؤكده المطعم سريعاً في واتساب.",
     viewCart: "عرض السلة", msgTitle: "*طلب جديد — برجراتو* 🍔",
+    gps: "📍 أرفق موقعي الحالي (GPS)", gpsOk: "📍 الموقع مُرفق ✓",
+    gpsWait: "جاري التحديد…", gpsErr: "تعذر تحديد الموقع — تأكد من السماح",
+    gpsAcc: "دقة", msgMap: "📍 الخريطة", remove: "✕",
     msgRef: "رقم الطلب", msgTotal: "المجموع التقريبي", msgName: "الاسم",
     msgArea: "المنطقة/العنوان", msgNote: "ملاحظات",
     msgFoot: "(أسعار المنيو الرسمية — يؤكد المطعم الإجمالي ورسوم التوصيل)",
@@ -106,6 +112,12 @@
     + "#bgModes button.on{background:linear-gradient(180deg,#F0A93C,#D98E2B);color:#201409;border-color:transparent;font-weight:700}"
     + "#bgDrawer .fld{width:100%;margin:5px 0;padding:11px 14px;border-radius:10px;border:1px solid rgba(240,200,140,.2);background:#0F0B07;color:#F4EAD8;font-family:'Tajawal',sans-serif;font-size:14px}"
     + "#bgDrawer .fld::placeholder{color:#6E5C4B}"
+    + "#bgGps{display:flex;align-items:center;gap:8px;margin:2px 0 4px}"
+    + "#bgGps button{border:1px dashed rgba(240,200,140,.35);background:transparent;color:#C9B592;border-radius:999px;padding:8px 16px;font-family:inherit;font-size:12.5px;cursor:pointer}"
+    + "#bgGps button.ok{border-style:solid;border-color:rgba(79,203,107,.5);color:#9FDCA9}"
+    + "#bgGps .gx{border:none;background:none;color:#8F7B5E;cursor:pointer;font-size:14px;display:none}"
+    + "#bgGps.has .gx{display:inline}"
+    + "#bgGpsErr{font-size:11px;color:#C4502E;margin:-2px 2px 4px;display:none}"
     + "#bgTotal{display:flex;justify-content:space-between;align-items:baseline;margin:8px 2px 2px;font-family:'El Messiri',serif;font-size:16px}"
     + "#bgTotal b{color:#F0A93C;font-size:20px}"
     + "#bgTotal small{display:block;font-family:'Tajawal',sans-serif;font-size:10.5px;color:#8F7B5E;font-weight:300;max-width:30ch}"
@@ -144,6 +156,8 @@
     + '<div id="bgModes"><button data-m="delivery">' + T.delivery + '</button><button data-m="pickup">' + T.pickup + '</button></div>'
     + '<input class="fld" id="bgName" type="text" placeholder="' + T.name + '" autocomplete="name" />'
     + '<input class="fld" id="bgArea" type="text" placeholder="' + T.area + '" autocomplete="street-address" />'
+    + '<div id="bgGps"><button type="button" id="bgGpsBtn">' + T.gps + '</button><button type="button" class="gx" aria-label="remove">' + T.remove + '</button></div>'
+    + '<div id="bgGpsErr">' + T.gpsErr + '</div>'
     + '<input class="fld" id="bgNote" type="text" placeholder="' + T.note + '" />'
     + '<div id="bgTotal"><span>' + T.total + '<small>' + T.totalNote + '</small></span><b id="bgSum"></b></div>'
     + '<a id="bgSend" href="#" target="_blank" rel="noopener">' + T.send + '</a>'
@@ -163,6 +177,14 @@
       nameEl = $("#bgName"), areaEl = $("#bgArea"), noteEl = $("#bgNote"),
       sendEl = $("#bgSend"), sentEl = $("#bgSent");
   nameEl.value = cust.name || ""; areaEl.value = cust.area || ""; noteEl.value = cust.note || "";
+  var gpsRow = $("#bgGps"), gpsBtn = $("#bgGpsBtn"), gpsX = gpsRow.querySelector(".gx"), gpsErr = $("#bgGpsErr");
+  function gpsUI() {
+    var has = !!(cust.loc && cust.loc.lat);
+    gpsRow.classList.toggle("has", has);
+    gpsBtn.classList.toggle("ok", has);
+    gpsBtn.textContent = has ? T.gpsOk + " (" + T.gpsAcc + " ±" + Math.round(cust.loc.acc || 0) + (EN ? "m)" : "م)") : T.gps;
+  }
+  gpsUI();
 
   /* ---------- rendering ---------- */
   function ref() {
@@ -211,6 +233,8 @@
     sumEl.textContent = num(total()) + " " + T.currency;
     wrap.querySelectorAll("#bgModes button").forEach(function (b) { b.classList.toggle("on", b.dataset.m === cust.mode); });
     areaEl.style.display = cust.mode === "delivery" ? "" : "none";
+    gpsRow.style.display = cust.mode === "delivery" ? "" : "none";
+    gpsErr.style.display = "none"; gpsUI();
     sentEl.style.display = sentFlag ? "block" : "none";
     syncBar(); syncSteppers(); compose();
   }
@@ -229,6 +253,8 @@
     L.push(T.msgTotal + ": *" + total() + " " + T.currency + "*");
     L.push((cust.mode === "delivery" ? "🛵 " + T.delivery : "🏠 " + T.pickup)
       + (cust.mode === "delivery" && areaEl.value.trim() ? " — " + T.msgArea + ": " + areaEl.value.trim() : ""));
+    if (cust.mode === "delivery" && cust.loc && cust.loc.lat)
+      L.push(T.msgMap + ": https://maps.google.com/?q=" + cust.loc.lat.toFixed(6) + "," + cust.loc.lng.toFixed(6));
     if (nameEl.value.trim()) L.push(T.msgName + ": " + nameEl.value.trim());
     if (noteEl.value.trim()) L.push(T.msgNote + ": " + noteEl.value.trim());
     L.push(T.msgFoot);
@@ -310,6 +336,19 @@
       save(); compose();
     });
   });
+  gpsBtn.addEventListener("click", function () {
+    if (cust.loc && cust.loc.lat) return;
+    if (!navigator.geolocation) { gpsErr.style.display = "block"; return; }
+    gpsBtn.textContent = T.gpsWait; gpsErr.style.display = "none";
+    navigator.geolocation.getCurrentPosition(function (p) {
+      cust.loc = { lat: p.coords.latitude, lng: p.coords.longitude, acc: p.coords.accuracy };
+      save(); gpsUI(); compose(); track("gps_attached");
+    }, function () {
+      gpsErr.style.display = "block"; gpsUI();
+    }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 });
+  });
+  gpsX.addEventListener("click", function () { delete cust.loc; save(); gpsUI(); compose(); });
+
   sendEl.addEventListener("click", function () {
     lsSet("bgcart-last", { state: state, notes: notes, ts: Date.now() });
     sentFlag = true;
