@@ -17,7 +17,9 @@
 <link rel="apple-touch-icon" href="assets/logo-icon.png" />
 <link rel="preload" as="image" href="assets/seq/f000.jpg" />
 <link rel="preload" as="image" href="assets/seq/f001.jpg" />
-<link rel="preload" as="image" href="assets/product-cut.png" />
+<link rel="preload" as="image" href="assets/product-cut.webp" />
+<meta name="theme-color" content="#0B0805" />
+<link rel="manifest" href="manifest.json" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,7 +30,8 @@
   "telephone": "+97125858495",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "بني ياس — الغابات",
+    "streetAddress": "شارع المويجعي — شارع الناير",
+    "addressLocality": "بني ياس شرق",
     "addressRegion": "أبوظبي",
     "addressCountry": "AE"
   },
@@ -36,7 +39,7 @@
   "logo": "assets/logo-full.png",
   "hasMenu": "https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762",
   "geo": {"@type": "GeoCoordinates", "latitude": 24.323836, "longitude": 54.619407},
-  "aggregateRating": {"@type": "AggregateRating", "ratingValue": 4.2, "bestRating": 5, "ratingCount": 100},
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": 4.8, "bestRating": 5, "ratingCount": 130},
   "sameAs": ["https://www.talabat.com/ar/uae/restaurant/734212/burgerato", "https://www.zomato.com/abudhabi/burgerato-restaurant-baniyas"]
 }
 </script>
@@ -147,7 +150,7 @@
   #hero .hero-media{display:block;height:44vh;width:auto;max-width:82vw;object-fit:contain;opacity:0;
     filter:drop-shadow(0 34px 46px rgba(0,0,0,.65)) drop-shadow(0 6px 18px rgba(240,140,40,.18))}
   #hero .specular{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0;
-    -webkit-mask:url(assets/product-cut.png) center/contain no-repeat;mask:url(assets/product-cut.png) center/contain no-repeat;
+    -webkit-mask:url(assets/product-cut.webp) center/contain no-repeat;mask:url(assets/product-cut.webp) center/contain no-repeat;
     background:linear-gradient(115deg,transparent 40%,rgba(255,236,200,.55) 50%,transparent 60%);background-size:280% 280%;
     animation:sheen 7.5s ease-in-out 2.2s infinite}
   @keyframes sheen{0%,16%{background-position:150% 0;opacity:0}24%{opacity:.9}46%,100%{background-position:-50% 0;opacity:0}}
@@ -315,7 +318,7 @@
 
 <header id="header">
   <a class="brand" href="#hero" aria-label="برجراتو">
-    <img src="assets/logo-icon.png" alt="" aria-hidden="true" style="width:40px;height:auto" />
+    <img src="assets/logo-icon.webp" alt="" aria-hidden="true" style="width:40px;height:auto" />
     <span class="wm">برجراتو</span>
   </a>
   <nav>
@@ -343,13 +346,13 @@
         <span class="latin">Burgerato · Smash</span>
         <!-- transparent cutout (background-removed) — NOT a blend trick -->
         <div class="media-float"><div class="media-tilt">
-          <img class="hero-media" src="assets/product-cut.png" alt="سماش برجراتو — طبقتان وشيدر ذائب وصوص سرّي" loading="eager" />
+          <img class="hero-media" src="assets/product-cut.webp" alt="سماش برجراتو — طبقتان وشيدر ذائب وصوص سرّي" loading="eager" />
           <span class="specular" aria-hidden="true"></span>
         </div></div>
         <h1>برجراتو</h1>
         <div class="sub">طبقتان من اللحم الطازج، شيدر يذوب على الصاج، وصوصنا السرّي — هذا هو السماش.</div>
         <a class="btn btn-ghost hero-order" href="#cta">اطلب الآن — وجبة بـ٣٢ د.إ</a>
-        <div class="hero-rate">تقييم <b>★ ٤٫٢</b> من +١٠٠ تقييم على طلبات · توصيل مجاني</div>
+        <div class="hero-rate">تقييم <b>★ ٤٫٨</b> على جوجل (١٣٠ مراجعة) · توصيل مجاني عبر طلبات</div>
       </div>
       <div class="scrollcue"><span>اكتشف</span><span class="bar"></span></div>
     </div>
@@ -455,20 +458,21 @@
       <div class="head"><span class="idx reveal">٠٥ — أسئلة شائعة</span><h2 class="gold-text reveal">كل ما تريد معرفته</h2></div>
       <details><summary>هل التوصيل متاح؟ وكم رسومه؟</summary><div class="fa">نعم — التوصيل حول بني ياس وضواحيها عبر <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">طلبات</a> (التوصيل مجاني حالياً وبلا حد أدنى للطلب)، أو مباشرة عبر <a href="https://wa.me/971505882658" target="_blank" rel="noopener">واتساب المطعم</a>.</div></details>
       <details><summary>كم سعر وجبة السماش برجر؟</summary><div class="fa">٣٢ درهماً وجبة كاملة — برجر سماش طبقتين مع البطاط والمشروب الغازي. وتجد أسعار كل الأصناف في <a href="#menu">المنيو أعلاه</a>.</div></details>
-      <details><summary>أين يقع المطعم؟</summary><div class="fa">بني ياس شرق — الغابات، أبوظبي. <a href="https://www.google.com/maps/search/?api=1&query=24.323836%2C54.619407" target="_blank" rel="noopener">اضغط هنا للاتجاهات عبر خرائط جوجل</a>.</div></details>
+      <details><summary>أين يقع المطعم؟ ومتى يفتح؟</summary><div class="fa">شارع المويجعي — شارع الناير، بني ياس شرق، أبوظبي — مفتوح يومياً حتى ٢:٠٠ صباحاً. <a href="https://www.google.com/maps/search/?api=1&query=24.323836%2C54.619407" target="_blank" rel="noopener">اضغط هنا للاتجاهات عبر خرائط جوجل</a>.</div></details>
       <details><summary>كيف أطلب؟</summary><div class="fa">ثلاث طرق: <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">تطبيق طلبات</a>، أو واتساب <a href="https://wa.me/971505882658" target="_blank" rel="noopener" dir="ltr">050 588 2658</a>، أو اتصال مباشر <a href="tel:+97125858495" dir="ltr">02 585 84 95</a>.</div></details>
     </div>
   </section>
 
   <footer><div class="wrap">
-    <img src="assets/logo-full.png" alt="برجراتو — Burgerato Restaurant" style="height:96px;width:auto;margin-inline:auto;display:block" loading="lazy" />
+    <img src="assets/logo-full.webp" alt="برجراتو — Burgerato Restaurant" style="height:96px;width:auto;margin-inline:auto;display:block" loading="lazy" />
     <div class="info">
-      <span class="rate">تقييم <b>★ ٤٫٢</b> على طلبات</span>
-      <a href="https://www.google.com/maps/search/?api=1&query=24.323836%2C54.619407" target="_blank" rel="noopener">📍 بني ياس شرق — الاتجاهات</a>
+      <span class="rate"><b>★ ٤٫٨</b> على جوجل · <b>★ ٤٫٢</b> على طلبات</span>
+      <span>🕐 يومياً حتى ٢:٠٠ صباحاً</span>
+      <a href="https://www.google.com/maps/search/?api=1&query=24.323836%2C54.619407" target="_blank" rel="noopener">📍 شارع المويجعي — بني ياس شرق · الاتجاهات</a>
       <a href="tel:+97125858495" dir="ltr">02 585 84 95</a>
       <a href="https://wa.me/971505882658" target="_blank" rel="noopener">واتساب المطعم</a>
     </div>
-    <div class="about">برجراتو مطعمٌ إماراتي في بني ياس شرق بأبوظبي، متخصّص في السماش برجر الطازج المسحوق على الصاج أمامك — ووجهة أهل المنطقة للبرجر والدجاج المقلي والباستا، في المطعم أو حتى باب بيتك.</div>
+    <div class="about">«الخدمة ممتازة والتعامل راقٍ والأكل ممتاز، وأسعارهم تناسب أي شخص» — من مراجعات جوجل ★٤٫٨<br/>برجراتو مطعمٌ إماراتي في بني ياس شرق بأبوظبي، متخصّص في السماش برجر الطازج المسحوق على الصاج أمامك — ووجهة أهل المنطقة للبرجر والدجاج المقلي والباستا، في المطعم أو حتى باب بيتك.</div>
     <nav class="links"><a href="#reveal">السماش</a><a href="#ritual">اللحظة</a><a href="#menu">المنيو</a><a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">اطلب عبر طلبات</a></nav>
     <div class="cr">© ٢٠٢٦ مطعم برجراتو — جميع الحقوق محفوظة</div>
   </div></footer>

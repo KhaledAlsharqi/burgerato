@@ -1,0 +1,15 @@
+{
+  "name": "برجراتو — سماش برجر",
+  "short_name": "برجراتو",
+  "description": "مطعم برجراتو، بني ياس شرق — أبوظبي. سماش برجر طازج على الصاج.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#0B0805",
+  "theme_color": "#0B0805",
+  "icons": [
+    { "src": "assets/logo-icon.png", "sizes": "1028x859", "type": "image/png", "purpose": "any" },
+    { "src": "assets/favicon.png", "sizes": "64x53", "type": "image/png" }
+  ]
+}
