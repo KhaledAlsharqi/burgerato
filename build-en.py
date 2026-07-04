@@ -5,7 +5,7 @@ import os, re, sys
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 src = open("index.html", encoding="utf-8").read()
 
-BASE = "https://khaledalsharqi.github.io/burgerato/"
+BASE = "https://burgerato.ae/"
 R = []  # (old, new) exact replacements, applied in order
 
 # ---------- document / head ----------
