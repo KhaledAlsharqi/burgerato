@@ -41,8 +41,9 @@ R += [
 
 # ---------- header / nav ----------
 R += [
+ ('aria-label="برجراتو"', 'aria-label="Burgerato"'),
  ('<span class="wm">برجراتو</span>', '<span class="wm">Burgerato</span>'),
- ('<a href="#reveal">السماش</a><a href="#ritual">اللحظة</a><a href="#menu">المنيو</a>\n    <a class="nav-cta" href="#cta">اطلب الآن</a>',
+ ('<a href="#reveal">السماش</a><a href="#ritual">اللحظة</a><a href="#menu">المنيو</a><a href="en.html" lang="en" style="letter-spacing:.08em">EN</a>\n    <a class="nav-cta" href="#cta">اطلب الآن</a>',
   '<a href="#reveal">The Smash</a><a href="#ritual">The Moment</a><a href="#menu">Menu</a><a href="./" lang="ar">عربي</a>\n    <a class="nav-cta" href="#cta">Order Now</a>'),
 ]
 
