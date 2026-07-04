@@ -113,8 +113,6 @@ R += [
  ('<h2 class="gold-text">جوعك يستاهل سماش</h2>', '<h2 class="gold-text">Your Hunger Deserves a Smash</h2>'),
  ('<p>وجبة كاملة بـ<b>٣٢ درهماً</b> — برجر، بطاط، ومشروب. اطلبها الآن وتوصلك ساخنةً أينما كنت حول بني ياس.</p>',
   '<p>A full meal for <b>AED 32</b> — burger, fries and a drink. Order now and it arrives hot, anywhere around Baniyas.</p>'),
- ('<div class="btns"><a class="btn btn-primary" href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">اطلب عبر طلبات</a><a class="btn btn-ghost" href="https://wa.me/971505882658?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%A8%D8%B1%D8%AC%D8%B1%D8%A7%D8%AA%D9%88%21%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%88%D8%AC%D8%A8%D8%A9%20%D8%B3%D9%85%D8%A7%D8%B4%20%F0%9F%8D%94" target="_blank" rel="noopener">أو واتساب</a></div>',
-  f'<div class="btns"><a class="btn btn-primary" href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener">Order on Talabat</a><a class="btn btn-ghost" href="{WA_EN}" target="_blank" rel="noopener">or WhatsApp</a></div>'),
  ('<div class="apps"><b>يوصلك عبر:</b> <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">طلبات</a> <span>·</span> نون فود <span>·</span> كيتا <span>·</span> كريم <span>·</span> ديليفرو <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none">هاتف 02 585 84 95</a></div>',
   '<div class="apps"><b>Delivered via:</b> <a href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">Talabat</a> <span>·</span> Noon Food <span>·</span> Keeta <span>·</span> Careem <span>·</span> Deliveroo <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none">Call 02 585 84 95</a></div>'),
 ]
@@ -137,8 +135,6 @@ R += [
  ('<h2 class="gold-text reveal">قائمة برجراتو الكاملة</h2>', '<h2 class="gold-text reveal">The Full Burgerato Menu</h2>'),
  ('<p class="menu-sub reveal">القائمة الرسمية بالأسعار — اختر قسمك، والطلب يوصلك عبر طلبات أو واتساب.</p>',
   '<p class="menu-sub reveal">The official menu with prices — pick a category, then order via Talabat or WhatsApp.</p>'),
- ('<a class="btn btn-primary" href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">اطلب عبر طلبات</a>\n        <a class="btn btn-ghost" href="https://wa.me/971505882658?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%A8%D8%B1%D8%AC%D8%B1%D8%A7%D8%AA%D9%88%21" target="_blank" rel="noopener">أو عبر واتساب</a>',
-  f'<a class="btn btn-primary" href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener">Order on Talabat</a>\n        <a class="btn btn-ghost" href="{WA_EN}" target="_blank" rel="noopener">or via WhatsApp</a>'),
 ]
 
 # ---------- FAQ ----------
@@ -212,6 +208,16 @@ LTR_CSS = """
   #fab{left:auto;right:22px;align-items:flex-end}
 """
 R += [("\n</style>", LTR_CSS + "\n</style>")]
+
+
+# ---------- cart / WhatsApp-first ordering ----------
+R += [
+ ("(window.BGCART?window.BGCART.t.add:'+ أضف')", "(window.BGCART?window.BGCART.t.add:'+ Add')"),
+ ('<div class="btns"><a class="btn btn-primary js-order" href="https://wa.me/971505882658" target="_blank" rel="noopener">اطلب عبر واتساب — مباشرة من المطعم</a><a class="btn btn-ghost" href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">أو عبر طلبات</a></div>',
+  '<div class="btns"><a class="btn btn-primary js-order" href="https://wa.me/971505882658" target="_blank" rel="noopener">Order via WhatsApp — direct from the restaurant</a><a class="btn btn-ghost" href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener">or via Talabat</a></div>'),
+ ('<a class="btn btn-primary js-order" href="https://wa.me/971505882658" target="_blank" rel="noopener">أرسل طلبك عبر واتساب</a>\n        <a class="btn btn-ghost" href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">أو عبر طلبات</a>',
+  '<a class="btn btn-primary js-order" href="https://wa.me/971505882658" target="_blank" rel="noopener">Send your order via WhatsApp</a>\n        <a class="btn btn-ghost" href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener">or via Talabat</a>'),
+]
 
 out = src
 missed = []

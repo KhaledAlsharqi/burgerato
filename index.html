@@ -79,6 +79,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="assets/menu-data.js" defer></script>
+<script src="assets/cart.js" defer></script>
 
 <style>
   :root{
@@ -431,7 +432,7 @@
         <span class="latin">Order Now</span>
         <h2 class="gold-text">جوعك يستاهل سماش</h2>
         <p>وجبة كاملة بـ<b>٣٢ درهماً</b> — برجر، بطاط، ومشروب. اطلبها الآن وتوصلك ساخنةً أينما كنت حول بني ياس.</p>
-        <div class="btns"><a class="btn btn-primary" href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">اطلب عبر طلبات</a><a class="btn btn-ghost" href="https://wa.me/971505882658?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%A8%D8%B1%D8%AC%D8%B1%D8%A7%D8%AA%D9%88%21%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%B7%D9%84%D8%A8%20%D9%88%D8%AC%D8%A8%D8%A9%20%D8%B3%D9%85%D8%A7%D8%B4%20%F0%9F%8D%94" target="_blank" rel="noopener">أو واتساب</a></div>
+        <div class="btns"><a class="btn btn-primary js-order" href="https://wa.me/971505882658" target="_blank" rel="noopener">اطلب عبر واتساب — مباشرة من المطعم</a><a class="btn btn-ghost" href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">أو عبر طلبات</a></div>
         <div class="apps"><b>يوصلك عبر:</b> <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">طلبات</a> <span>·</span> نون فود <span>·</span> كيتا <span>·</span> كريم <span>·</span> ديليفرو <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none">هاتف 02 585 84 95</a></div>
       </div>
     </div>
@@ -463,8 +464,8 @@
       <div class="mtabs" id="menuTabs" role="tablist"></div>
       <div class="mgrid" id="menuGrid"></div>
       <div class="mcta">
-        <a class="btn btn-primary" href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">اطلب عبر طلبات</a>
-        <a class="btn btn-ghost" href="https://wa.me/971505882658?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%A8%D8%B1%D8%AC%D8%B1%D8%A7%D8%AA%D9%88%21" target="_blank" rel="noopener">أو عبر واتساب</a>
+        <a class="btn btn-primary js-order" href="https://wa.me/971505882658" target="_blank" rel="noopener">أرسل طلبك عبر واتساب</a>
+        <a class="btn btn-ghost" href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">أو عبر طلبات</a>
       </div>
     </div>
   </section>
@@ -630,7 +631,7 @@
           else pic='<div class="mpic"></div>';
           const old=it.oldPrice>0?'<span class="mold">'+num(it.oldPrice)+'</span><span class="moff">خصم</span>':"";
           card.innerHTML=pic+'<div class="mbody"><h4>'+it.name+'</h4>'+(it.desc?'<div class="mdesc">'+it.desc+'</div>':"")+
-            '<div class="mrow"><span class="mprice">'+num(it.price)+' د.إ</span>'+old+'</div></div>';
+            '<div class="mrow"><span class="mprice">'+num(it.price)+' د.إ</span>'+old+'<button class="madd" type="button" data-id="'+it.id+'">'+(window.BGCART?window.BGCART.t.add:'+ أضف')+'</button></div></div>';
           grid.appendChild(card);
         });
         if(hasGSAP) ScrollTrigger.refresh();
