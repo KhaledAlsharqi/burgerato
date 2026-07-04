@@ -2,7 +2,7 @@
 <!-- ============================================================================
      برجراتو — سماش برجر · صفحة هبوط سينمائية داكنة (ملف واحد)
      Engine: cinematic-landing-kit (Lenis + GSAP ticker, canvas film, dark luxe)
-     FRAME_COUNT=110 (interim seq from the making-of film; regen pending Higgsfield unlock)
+     FRAME_COUNT=86 — فيلم مولّد متطابق الحدود (v1..v4)؛ الإطارات WebP وتُحمَّل عند الاقتراب من القسم
      ============================================================================ -->
 <html lang="ar" dir="rtl">
 <head>
@@ -21,12 +21,14 @@
 <meta property="og:image" content="https://burgerato.ae/assets/og-share.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Burgerato" />
+<meta property="og:locale" content="ar_AE" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="برجراتو — سماش برجر" />
+<meta name="twitter:description" content="طبقتان، شيدر ذائب، وصوص سرّي. وجبة كاملة بـ٣٢ درهماً — بني ياس، أبوظبي." />
 <meta name="twitter:image" content="https://burgerato.ae/assets/og-share.jpg" />
 <link rel="icon" type="image/png" href="assets/favicon.png" />
-<link rel="apple-touch-icon" href="assets/logo-icon.png" />
-<link rel="preload" as="image" href="assets/seq/f000.jpg" />
-<link rel="preload" as="image" href="assets/seq/f001.jpg" />
+<link rel="apple-touch-icon" href="assets/touch-icon.png" />
 <link rel="preload" as="image" href="assets/product-cut.webp" />
 <meta name="theme-color" content="#0B0805" />
 <link rel="manifest" href="manifest.json" />
@@ -36,7 +38,7 @@
   "@type": "Restaurant",
   "name": "مطعم برجراتو — Burgerato Restaurant",
   "servesCuisine": ["Burgers", "Fast Food"],
-  "priceRange": "AED 20-60",
+  "priceRange": "AED 13-77",
   "telephone": "+97125858495",
   "address": {
     "@type": "PostalAddress",
@@ -48,9 +50,8 @@
   "url": "https://burgerato.ae/",
   "image": "https://burgerato.ae/assets/product-hero.jpg",
   "logo": "https://burgerato.ae/assets/logo-full.webp",
-  "hasMenu": "https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762",
+  "hasMenu": "https://burgerato.ae/#menu",
   "geo": {"@type": "GeoCoordinates", "latitude": 24.323836, "longitude": 54.619407},
-  "aggregateRating": {"@type": "AggregateRating", "ratingValue": 4.8, "bestRating": 5, "ratingCount": 130},
   "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "13:00", "closes": "02:00"}],
   "sameAs": ["https://www.talabat.com/ar/uae/restaurant/734212/burgerato", "https://www.zomato.com/abudhabi/burgerato-restaurant-baniyas"]
 }
@@ -62,7 +63,7 @@
   "mainEntity": [
     {"@type": "Question", "name": "هل التوصيل متاح؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم — التوصيل حول بني ياس وضواحيها عبر تطبيق طلبات، أو مباشرة عبر واتساب المطعم 050 588 2658."}},
     {"@type": "Question", "name": "كم سعر وجبة السماش برجر؟", "acceptedAnswer": {"@type": "Answer", "text": "٣٢ درهماً وجبة كاملة — برجر سماش طبقتين مع البطاط والمشروب الغازي."}},
-    {"@type": "Question", "name": "أين يقع مطعم برجراتو؟", "acceptedAnswer": {"@type": "Answer", "text": "بني ياس شرق — الغابات، أبوظبي، الإمارات."}},
+    {"@type": "Question", "name": "أين يقع المطعم؟ ومتى يفتح؟", "acceptedAnswer": {"@type": "Answer", "text": "شارع المويجعي — شارع الناير (قرب بوابة الشرق)، بني ياس شرق، أبوظبي. مفتوح يومياً من ١:٠٠ ظهراً حتى ٢:٠٠ فجراً."}},
     {"@type": "Question", "name": "كيف أطلب من برجراتو؟", "acceptedAnswer": {"@type": "Answer", "text": "عبر تطبيق طلبات، أو واتساب 050 588 2658، أو اتصال مباشر 02 585 84 95."}}
   ]
 }
@@ -75,9 +76,11 @@
 <script>(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function(){a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};a.queue=[];var s='script';var r=t.createElement(s);r.async=!0;r.src=n;var u=t.getElementsByTagName(s)[0];u.parentNode.insertBefore(r,u)})(window,document,'https://sc-static.net/scevent.min.js');snaptr('init','SNAP_PIXEL_ID');snaptr('track','PAGE_VIEW');</script>
 ═══ END ANALYTICS ═══ -->
 
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Tajawal:wght@200;300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Tajawal:wght@300;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
@@ -383,7 +386,7 @@
   <section id="film" data-ambient="#0C0906" data-glow=".75">
     <div class="stage fallback-host">
       <canvas id="filmCanvas"></canvas>
-      <img class="film-fallback" src="assets/product-hero.jpg" alt="سماش برجراتو" />
+      <img class="film-fallback" src="assets/product-hero.jpg" alt="سماش برجراتو" loading="lazy" />
       <div class="caps" id="filmCaps">
         <div class="cap" data-a="0.03" data-b="0.22">لحمٌ طازج يُفرم يومياً…<br/>ويُسحق على صاجٍ ملتهب</div>
         <div class="cap" data-a="0.31" data-b="0.48">شيدر أمريكي يذوب<br/>فوق القرمشة</div>
@@ -428,7 +431,7 @@
   <!-- 5 · CTA -->
   <section id="cta" data-ambient="#0D0A06" data-glow=".55">
     <div class="stage fallback-host">
-      <img class="cta-poster" id="ctaPoster" src="assets/product-hero.jpg" alt="" aria-hidden="true" />
+      <img class="cta-poster" id="ctaPoster" src="assets/product-hero.jpg" alt="" aria-hidden="true" loading="lazy" />
       <video id="ctaVideo" muted playsinline preload="none" aria-hidden="true" poster="assets/product-hero.jpg"></video>
       <div class="dim" id="ctaDim"></div>
       <div class="content" id="ctaContent">
@@ -436,7 +439,7 @@
         <h2 class="gold-text">جوعك يستاهل سماش</h2>
         <p>وجبة كاملة بـ<b>٣٢ درهماً</b> — برجر، بطاط، ومشروب. اطلبها الآن وتوصلك ساخنةً أينما كنت حول بني ياس.</p>
         <div class="btns"><a class="btn btn-primary js-order" href="https://wa.me/971505882658" target="_blank" rel="noopener">اطلب عبر واتساب — مباشرة من المطعم</a><a class="btn btn-ghost" href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener">أو عبر طلبات</a></div>
-        <div class="apps"><b>يوصلك عبر:</b> <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">طلبات</a> <span>·</span> نون فود <span>·</span> كيتا <span>·</span> كريم <span>·</span> ديليفرو <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none">هاتف 02 585 84 95</a></div>
+        <div class="apps"><b>يوصلك عبر:</b> <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">طلبات</a> <span>·</span> نون فود <span>·</span> كيتا <span>·</span> كريم <span>·</span> ديليفرو <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none" dir="ltr">02 585 84 95 ☎</a></div>
       </div>
     </div>
   </section>
@@ -448,9 +451,9 @@
       <div class="cards">
         <article class="ed-card reveal" data-cart-add="smash" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="سماش برجراتو" loading="lazy" /></div>
           <div class="body"><h3>سماش برجراتو</h3><p>البطل نفسه — طبقتان، شيدر ذائب، وصوص سرّي.</p><span class="tag">وجبة · ٣٢ د.إ · اضغط للطلب</span></div></article>
-        <article class="ed-card reveal" data-cart-add="1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="حاشي برجراتو بالمشروم" loading="lazy" /></div>
+        <article class="ed-card reveal" data-cart-add="1427974055" data-cart-note="1427974055:مع صوص المشروم والبصل الكريمي (with mushroom sauce)" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="حاشي برجراتو بالمشروم" loading="lazy" /></div>
           <div class="body"><h3>حاشي برجراتو بالمشروم</h3><p>لحم حاشي طازج تحت صوص المشروم والبصل الكريمي — وتاج المايونيز علامتنا.</p><span class="tag">وجبة · ٤٥ د.إ · اضغط للطلب</span></div></article>
-        <article class="ed-card reveal" data-cart-add="smash,1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="كومبو البطلين" loading="lazy" /></div>
+        <article class="ed-card reveal" data-cart-add="smash,1427974055" data-cart-note="1427974055:مع صوص المشروم والبصل الكريمي (with mushroom sauce)" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="كومبو البطلين" loading="lazy" /></div>
           <div class="body"><h3>كومبو البطلين</h3><p>سماش + حاشي المشروم معاً — للجوع الجماعي.</p><span class="tag">وجبتان · ٧٧ د.إ · اضغط للطلب</span></div></article>
       </div>
     </div>
@@ -538,7 +541,7 @@
     progress.style.transform="scaleX("+s.progress+")";
     header.classList.toggle("solid",s.scroll()>40);
     if(s.scroll()>140) header.classList.toggle("hidden",s.direction===1); else header.classList.remove("hidden");
-    if(fab){fab.classList.toggle("show",s.scroll()>innerHeight*0.85);fab.setAttribute("aria-hidden",s.scroll()>innerHeight*0.85?"false":"true");}
+    if(fab){const showFab=s.scroll()>innerHeight*0.85;fab.classList.toggle("show",showFab);fab.setAttribute("aria-hidden",showFab?"false":"true");const fm=fab.querySelector(".fab-main");if(fm&&!document.body.classList.contains("bgbar-on"))fm.tabIndex=showFab?0:-1;}
   }});
   else window.addEventListener("scroll",()=>{if(fab)fab.classList.toggle("show",scrollY>innerHeight*0.85);},{passive:true});
   if(fab){
@@ -592,27 +595,36 @@
   (function initFilm(){
     const FRAME_COUNT=86;
     const FOCUS_Y=0.5; // vertical focus for cover-crop (subjects sit slightly below center)
-    const url=i=>"assets/seq/f"+String(i).padStart(3,"0")+".jpg";
+    const url=i=>"assets/seq/f"+String(i).padStart(3,"0")+".webp";
     const canvas=document.getElementById("filmCanvas"),stage=canvas.closest(".stage"),fallback=document.querySelector("#film .film-fallback"),loaderEl=document.getElementById("filmLoader"),caps=Array.from(document.querySelectorAll("#filmCaps .cap")),ctx=canvas.getContext("2d",{alpha:false}),frames=new Array(FRAME_COUNT);
     let loaded=0,errored=0,ready=false,useFallback=false,cur=-1,lastIdx=0,filmST=null;
     const progIdx=()=>filmST?Math.round(clamp(filmST.progress,0,1)*(FRAME_COUNT-1)):0;
     function showFallback(){useFallback=true;ready=true;canvas.style.display="none";if(fallback&&fallback.complete&&fallback.naturalWidth>0)fallback.style.display="block";else if(fallback)fallback.style.display="none";if(loaderEl)loaderEl.style.opacity=0;}
     function maybeReady(){if(ready)return;if(loaded+errored>=FRAME_COUNT||loaded>=Math.ceil(FRAME_COUNT*0.6)){if(loaded===0){showFallback();return;}ready=true;if(loaderEl)loaderEl.style.opacity=0;resize();draw(progIdx());}if(loaderEl&&!ready)loaderEl.textContent="… "+Math.round(loaded/FRAME_COUNT*100)+"%";}
-    if(reduce||!hasGSAP){showFallback();return;}
-    for(let i=0;i<FRAME_COUNT;i++){const im=new Image();im.decoding="async";im.onload=()=>{frames[i]=im;loaded++;maybeReady();};im.onerror=()=>{errored++;maybeReady();};im.src=url(i);}
-    setTimeout(()=>{if(!ready){if(loaded>0){ready=true;if(loaderEl)loaderEl.style.opacity=0;resize();draw(progIdx());}else showFallback();}},9000);
+    if(reduce||!hasGSAP){document.getElementById("film").style.height="100svh";showFallback();return;}
+    let preloadStarted=false;
+    function startPreload(){
+      if(preloadStarted)return; preloadStarted=true;
+      for(let i=0;i<FRAME_COUNT;i++){const im=new Image();im.decoding="async";im.onload=()=>{frames[i]=im;loaded++;maybeReady();};im.onerror=()=>{errored++;maybeReady();};im.src=url(i);}
+      setTimeout(()=>{if(!ready){if(loaded>0){ready=true;if(loaderEl)loaderEl.style.opacity=0;resize();draw(progIdx());}else showFallback();}},9000);
+    }
+    // حمّل الإطارات فقط عند اقتراب قسم الفيلم (يوفر ~نصف وزن الصفحة لمن لا يصل إليه)
+    if("IntersectionObserver" in window){
+      new IntersectionObserver((es,io)=>{es.forEach(e=>{if(e.isIntersecting){startPreload();io.disconnect();}});},{rootMargin:"150% 0px"}).observe(document.getElementById("film"));
+    } else startPreload();
     function resize(){const dpr=Math.min(2,window.devicePixelRatio||1),w=stage.clientWidth,h=stage.clientHeight;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);canvas.style.width=w+"px";canvas.style.height=h+"px";cur=-1;if(ready&&!useFallback)draw(lastIdx);}
     function draw(i){if(useFallback)return;i=clamp(i,0,FRAME_COUNT-1);let im=frames[i];if(!im){for(let d=1;d<FRAME_COUNT;d++){if(frames[i-d]){im=frames[i-d];break;}if(frames[i+d]){im=frames[i+d];break;}}if(!im)return;}if(i===cur)return;cur=i;lastIdx=i;const cw=canvas.width,ch=canvas.height,iw=im.naturalWidth,ih=im.naturalHeight,s=Math.max(cw/iw,ch/ih),dw=iw*s,dh=ih*s;ctx.fillStyle="#0B0805";ctx.fillRect(0,0,cw,ch);ctx.drawImage(im,(cw-dw)/2,(ch-dh)*FOCUS_Y,dw,dh);}
     window.addEventListener("resize",resize,{passive:true});
-    filmST=ScrollTrigger.create({trigger:"#film",start:"top top",end:"bottom bottom",scrub:true,onUpdate:self=>{const p=self.progress;if(ready&&!useFallback)draw(Math.round(p*(FRAME_COUNT-1)));for(const c of caps){const a=parseFloat(c.dataset.a),b=parseFloat(c.dataset.b),mid=(a+b)/2,o=Math.min(smooth(a,a+(mid-a)*0.6,p),1-smooth(mid+(b-mid)*0.4,b,p));c.style.opacity=Math.max(0,o);c.style.transform="translateY("+(12*(1-Math.max(0,o)))+"px)";}}});
+    filmST=ScrollTrigger.create({trigger:"#film",start:"top top",end:"bottom bottom",scrub:true,onUpdate:self=>{startPreload();const p=self.progress;if(ready&&!useFallback)draw(Math.round(p*(FRAME_COUNT-1)));for(const c of caps){const a=parseFloat(c.dataset.a),b=parseFloat(c.dataset.b),mid=(a+b)/2,o=Math.min(smooth(a,a+(mid-a)*0.6,p),1-smooth(mid+(b-mid)*0.4,b,p));c.style.opacity=Math.max(0,o);c.style.transform="translateY("+(12*(1-Math.max(0,o)))+"px)";}}});
   })();
 
   // MENU — tabs + cards from BURGERATO_MENU (talabat data)
   (function initMenu(){
     const tabs=document.getElementById("menuTabs"),grid=document.getElementById("menuGrid");
     if(!tabs||!grid)return;
+    let buildTries=0;
     function build(){
-      if(typeof BURGERATO_MENU==="undefined"){setTimeout(build,150);return;}
+      if(typeof BURGERATO_MENU==="undefined"){if(++buildTries>60){document.getElementById("menu").style.display="none";return;}setTimeout(build,150);return;}
       var HEROES={cat:"⭐ الأبطال",items:[{id:"smash",name:"وجبة سماش برجراتو",desc:"طبقتان من اللحم الطازج، شيدر ذائب، وصوص سرّي — مع البطاط والمشروب",price:32,oldPrice:-1,hasImg:true}]};
       var MENUX=[HEROES].concat(BURGERATO_MENU);
       const AR="٠١٢٣٤٥٦٧٨٩";
@@ -622,7 +634,7 @@
         tabs.innerHTML="";
         MENUX.forEach((c,i)=>{
           const b=document.createElement("button");
-          b.className="mtab"+(i===active?" on":""); b.type="button"; b.setAttribute("role","tab");
+          b.className="mtab"+(i===active?" on":""); b.type="button"; b.setAttribute("role","tab"); b.setAttribute("aria-selected", i===active?"true":"false");
           b.textContent=c.cat; b.addEventListener("click",()=>{active=i;renderTabs();renderGrid();});
           tabs.appendChild(b);
         });
@@ -655,7 +667,6 @@
     video.addEventListener("ended",()=>load(pi+1));
     video.addEventListener("error",()=>{if(++attempts<playlist.length)load(pi+1);});
     let started=false; const start=()=>{if(started)return;started=true;load(0);};
-    ["pointerdown","keydown","wheel","touchstart"].forEach(ev=>window.addEventListener(ev,start,{once:true,passive:true}));
     if(hasGSAP&&!reduce){
       ScrollTrigger.create({trigger:sec,start:"top center",onEnter:start,onEnterBack:start});
       ScrollTrigger.create({trigger:sec,start:"top top",end:"bottom bottom",scrub:true,onUpdate:s=>{const p=s.progress;dim.style.opacity=smooth(0.34,0.66,p);content.style.opacity=smooth(0.40,0.72,p);content.style.transform="translateY("+(28*(1-smooth(0.40,0.72,p)))+"px)";}});

@@ -2,7 +2,7 @@
 <!-- ============================================================================
      برجراتو — سماش برجر · صفحة هبوط سينمائية داكنة (ملف واحد)
      Engine: cinematic-landing-kit (Lenis + GSAP ticker, canvas film, dark luxe)
-     FRAME_COUNT=110 (interim seq from the making-of film; regen pending Higgsfield unlock)
+     FRAME_COUNT=86 — فيلم مولّد متطابق الحدود (v1..v4)؛ الإطارات WebP وتُحمَّل عند الاقتراب من القسم
      ============================================================================ -->
 <html lang="en" dir="ltr">
 <head>
@@ -21,26 +21,28 @@
 <meta property="og:image" content="https://burgerato.ae/assets/og-share.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Burgerato" />
+<meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Burgerato — Smash Burger" />
+<meta name="twitter:description" content="Two patties, molten cheddar, secret sauce. Full meal AED 32 — Baniyas, Abu Dhabi." />
 <meta name="twitter:image" content="https://burgerato.ae/assets/og-share.jpg" />
 <link rel="icon" type="image/png" href="assets/favicon.png" />
-<link rel="apple-touch-icon" href="assets/logo-icon.png" />
-<link rel="preload" as="image" href="assets/seq/f000.jpg" />
-<link rel="preload" as="image" href="assets/seq/f001.jpg" />
+<link rel="apple-touch-icon" href="assets/touch-icon.png" />
 <link rel="preload" as="image" href="assets/product-cut.webp" />
 <meta name="theme-color" content="#0B0805" />
-<link rel="manifest" href="manifest.json" />
+<link rel="manifest" href="manifest-en.json" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Burgerato Restaurant",
   "servesCuisine": ["Burgers", "Fast Food"],
-  "priceRange": "AED 20-60",
+  "priceRange": "AED 13-77",
   "telephone": "+97125858495",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Al Dhayir Street, near Bawabat Al Sharq",
+    "streetAddress": "Al Muwaiji Street — Al Nayer Street, near Bawabat Al Sharq",
     "addressLocality": "Baniyas East",
     "addressRegion": "Abu Dhabi",
     "addressCountry": "AE"
@@ -48,9 +50,8 @@
   "url": "https://burgerato.ae/",
   "image": "https://burgerato.ae/assets/product-hero.jpg",
   "logo": "https://burgerato.ae/assets/logo-full.webp",
-  "hasMenu": "https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762",
+  "hasMenu": "https://burgerato.ae/#menu",
   "geo": {"@type": "GeoCoordinates", "latitude": 24.323836, "longitude": 54.619407},
-  "aggregateRating": {"@type": "AggregateRating", "ratingValue": 4.8, "bestRating": 5, "ratingCount": 130},
   "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "13:00", "closes": "02:00"}],
   "sameAs": ["https://www.talabat.com/ar/uae/restaurant/734212/burgerato", "https://www.zomato.com/abudhabi/burgerato-restaurant-baniyas"]
 }
@@ -62,7 +63,7 @@
   "mainEntity": [
     {"@type": "Question", "name": "Is delivery available?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — delivery around Baniyas and nearby areas via Talabat, or directly via the restaurant WhatsApp 050 588 2658."}},
     {"@type": "Question", "name": "How much is the Smash burger meal?", "acceptedAnswer": {"@type": "Answer", "text": "AED 32 for a full meal — a double smash burger with fries and a soft drink."}},
-    {"@type": "Question", "name": "Where is Burgerato located?", "acceptedAnswer": {"@type": "Answer", "text": "Al Dhayir Street, Baniyas East, Abu Dhabi, UAE. Open daily 1:00 PM to 2:00 AM."}},
+    {"@type": "Question", "name": "Where is the restaurant? When does it open?", "acceptedAnswer": {"@type": "Answer", "text": "Al Muwaiji Street — Al Nayer Street (near Bawabat Al Sharq), Baniyas East, Abu Dhabi. Open daily 1:00 PM to 2:00 AM."}},
     {"@type": "Question", "name": "How do I order from Burgerato?", "acceptedAnswer": {"@type": "Answer", "text": "Via the Talabat app, WhatsApp 050 588 2658, or by phone 02 585 84 95."}}
   ]
 }
@@ -75,9 +76,11 @@
 <script>(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function(){a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};a.queue=[];var s='script';var r=t.createElement(s);r.async=!0;r.src=n;var u=t.getElementsByTagName(s)[0];u.parentNode.insertBefore(r,u)})(window,document,'https://sc-static.net/scevent.min.js');snaptr('init','SNAP_PIXEL_ID');snaptr('track','PAGE_VIEW');</script>
 ═══ END ANALYTICS ═══ -->
 
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Tajawal:wght@200;300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Tajawal:wght@300;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
@@ -396,7 +399,7 @@
   <section id="film" data-ambient="#0C0906" data-glow=".75">
     <div class="stage fallback-host">
       <canvas id="filmCanvas"></canvas>
-      <img class="film-fallback" src="assets/product-hero.jpg" alt="Burgerato Smash" />
+      <img class="film-fallback" src="assets/product-hero.jpg" alt="Burgerato Smash" loading="lazy" />
       <div class="caps" id="filmCaps">
         <div class="cap" data-a="0.03" data-b="0.22">Fresh beef, ground daily…<br/>smashed on a blazing griddle</div>
         <div class="cap" data-a="0.31" data-b="0.48">American cheddar melting<br/>over the crispy crust</div>
@@ -441,7 +444,7 @@
   <!-- 5 · CTA -->
   <section id="cta" data-ambient="#0D0A06" data-glow=".55">
     <div class="stage fallback-host">
-      <img class="cta-poster" id="ctaPoster" src="assets/product-hero.jpg" alt="" aria-hidden="true" />
+      <img class="cta-poster" id="ctaPoster" src="assets/product-hero.jpg" alt="" aria-hidden="true" loading="lazy" />
       <video id="ctaVideo" muted playsinline preload="none" aria-hidden="true" poster="assets/product-hero.jpg"></video>
       <div class="dim" id="ctaDim"></div>
       <div class="content" id="ctaContent">
@@ -449,7 +452,7 @@
         <h2 class="gold-text">Your Hunger Deserves a Smash</h2>
         <p>A full meal for <b>AED 32</b> — burger, fries and a drink. Order now and it arrives hot, anywhere around Baniyas.</p>
         <div class="btns"><a class="btn btn-primary js-order" href="https://wa.me/971505882658" target="_blank" rel="noopener">Order via WhatsApp — direct from the restaurant</a><a class="btn btn-ghost" href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener">or via Talabat</a></div>
-        <div class="apps"><b>Delivered via:</b> <a href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">Talabat</a> <span>·</span> Noon Food <span>·</span> Keeta <span>·</span> Careem <span>·</span> Deliveroo <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none">Call 02 585 84 95</a></div>
+        <div class="apps"><b>Delivered via:</b> <a href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">Talabat</a> <span>·</span> Noon Food <span>·</span> Keeta <span>·</span> Careem <span>·</span> Deliveroo <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none" dir="ltr">☎ 02 585 84 95</a></div>
       </div>
     </div>
   </section>
@@ -461,9 +464,9 @@
       <div class="cards">
         <article class="ed-card reveal" data-cart-add="smash" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="Burgerato Smash" loading="lazy" /></div>
           <div class="body"><h3>Burgerato Smash</h3><p>The hero itself — two patties, molten cheddar, secret sauce.</p><span class="tag">Meal · AED 32 · Tap to order</span></div></article>
-        <article class="ed-card reveal" data-cart-add="1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="Mushroom Hashi Burgerato" loading="lazy" /></div>
+        <article class="ed-card reveal" data-cart-add="1427974055" data-cart-note="1427974055:مع صوص المشروم والبصل الكريمي (with mushroom sauce)" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="Mushroom Hashi Burgerato" loading="lazy" /></div>
           <div class="body"><h3>Mushroom Hashi Burgerato</h3><p>Fresh camel meat under a creamy mushroom-onion sauce — crowned with our signature mayo dots.</p><span class="tag">Meal · AED 45 · Tap to order</span></div></article>
-        <article class="ed-card reveal" data-cart-add="smash,1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="The Two Heroes Combo" loading="lazy" /></div>
+        <article class="ed-card reveal" data-cart-add="smash,1427974055" data-cart-note="1427974055:مع صوص المشروم والبصل الكريمي (with mushroom sauce)" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="The Two Heroes Combo" loading="lazy" /></div>
           <div class="body"><h3>The Two Heroes Combo</h3><p>Smash + Mushroom Hashi together — for serious hunger.</p><span class="tag">Two meals · AED 77 · Tap to order</span></div></article>
       </div>
     </div>
@@ -551,7 +554,7 @@
     progress.style.transform="scaleX("+s.progress+")";
     header.classList.toggle("solid",s.scroll()>40);
     if(s.scroll()>140) header.classList.toggle("hidden",s.direction===1); else header.classList.remove("hidden");
-    if(fab){fab.classList.toggle("show",s.scroll()>innerHeight*0.85);fab.setAttribute("aria-hidden",s.scroll()>innerHeight*0.85?"false":"true");}
+    if(fab){const showFab=s.scroll()>innerHeight*0.85;fab.classList.toggle("show",showFab);fab.setAttribute("aria-hidden",showFab?"false":"true");const fm=fab.querySelector(".fab-main");if(fm&&!document.body.classList.contains("bgbar-on"))fm.tabIndex=showFab?0:-1;}
   }});
   else window.addEventListener("scroll",()=>{if(fab)fab.classList.toggle("show",scrollY>innerHeight*0.85);},{passive:true});
   if(fab){
@@ -605,27 +608,36 @@
   (function initFilm(){
     const FRAME_COUNT=86;
     const FOCUS_Y=0.5; // vertical focus for cover-crop (subjects sit slightly below center)
-    const url=i=>"assets/seq/f"+String(i).padStart(3,"0")+".jpg";
+    const url=i=>"assets/seq/f"+String(i).padStart(3,"0")+".webp";
     const canvas=document.getElementById("filmCanvas"),stage=canvas.closest(".stage"),fallback=document.querySelector("#film .film-fallback"),loaderEl=document.getElementById("filmLoader"),caps=Array.from(document.querySelectorAll("#filmCaps .cap")),ctx=canvas.getContext("2d",{alpha:false}),frames=new Array(FRAME_COUNT);
     let loaded=0,errored=0,ready=false,useFallback=false,cur=-1,lastIdx=0,filmST=null;
     const progIdx=()=>filmST?Math.round(clamp(filmST.progress,0,1)*(FRAME_COUNT-1)):0;
     function showFallback(){useFallback=true;ready=true;canvas.style.display="none";if(fallback&&fallback.complete&&fallback.naturalWidth>0)fallback.style.display="block";else if(fallback)fallback.style.display="none";if(loaderEl)loaderEl.style.opacity=0;}
     function maybeReady(){if(ready)return;if(loaded+errored>=FRAME_COUNT||loaded>=Math.ceil(FRAME_COUNT*0.6)){if(loaded===0){showFallback();return;}ready=true;if(loaderEl)loaderEl.style.opacity=0;resize();draw(progIdx());}if(loaderEl&&!ready)loaderEl.textContent="… "+Math.round(loaded/FRAME_COUNT*100)+"%";}
-    if(reduce||!hasGSAP){showFallback();return;}
-    for(let i=0;i<FRAME_COUNT;i++){const im=new Image();im.decoding="async";im.onload=()=>{frames[i]=im;loaded++;maybeReady();};im.onerror=()=>{errored++;maybeReady();};im.src=url(i);}
-    setTimeout(()=>{if(!ready){if(loaded>0){ready=true;if(loaderEl)loaderEl.style.opacity=0;resize();draw(progIdx());}else showFallback();}},9000);
+    if(reduce||!hasGSAP){document.getElementById("film").style.height="100svh";showFallback();return;}
+    let preloadStarted=false;
+    function startPreload(){
+      if(preloadStarted)return; preloadStarted=true;
+      for(let i=0;i<FRAME_COUNT;i++){const im=new Image();im.decoding="async";im.onload=()=>{frames[i]=im;loaded++;maybeReady();};im.onerror=()=>{errored++;maybeReady();};im.src=url(i);}
+      setTimeout(()=>{if(!ready){if(loaded>0){ready=true;if(loaderEl)loaderEl.style.opacity=0;resize();draw(progIdx());}else showFallback();}},9000);
+    }
+    // حمّل الإطارات فقط عند اقتراب قسم الفيلم (يوفر ~نصف وزن الصفحة لمن لا يصل إليه)
+    if("IntersectionObserver" in window){
+      new IntersectionObserver((es,io)=>{es.forEach(e=>{if(e.isIntersecting){startPreload();io.disconnect();}});},{rootMargin:"150% 0px"}).observe(document.getElementById("film"));
+    } else startPreload();
     function resize(){const dpr=Math.min(2,window.devicePixelRatio||1),w=stage.clientWidth,h=stage.clientHeight;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);canvas.style.width=w+"px";canvas.style.height=h+"px";cur=-1;if(ready&&!useFallback)draw(lastIdx);}
     function draw(i){if(useFallback)return;i=clamp(i,0,FRAME_COUNT-1);let im=frames[i];if(!im){for(let d=1;d<FRAME_COUNT;d++){if(frames[i-d]){im=frames[i-d];break;}if(frames[i+d]){im=frames[i+d];break;}}if(!im)return;}if(i===cur)return;cur=i;lastIdx=i;const cw=canvas.width,ch=canvas.height,iw=im.naturalWidth,ih=im.naturalHeight,s=Math.max(cw/iw,ch/ih),dw=iw*s,dh=ih*s;ctx.fillStyle="#0B0805";ctx.fillRect(0,0,cw,ch);ctx.drawImage(im,(cw-dw)/2,(ch-dh)*FOCUS_Y,dw,dh);}
     window.addEventListener("resize",resize,{passive:true});
-    filmST=ScrollTrigger.create({trigger:"#film",start:"top top",end:"bottom bottom",scrub:true,onUpdate:self=>{const p=self.progress;if(ready&&!useFallback)draw(Math.round(p*(FRAME_COUNT-1)));for(const c of caps){const a=parseFloat(c.dataset.a),b=parseFloat(c.dataset.b),mid=(a+b)/2,o=Math.min(smooth(a,a+(mid-a)*0.6,p),1-smooth(mid+(b-mid)*0.4,b,p));c.style.opacity=Math.max(0,o);c.style.transform="translateY("+(12*(1-Math.max(0,o)))+"px)";}}});
+    filmST=ScrollTrigger.create({trigger:"#film",start:"top top",end:"bottom bottom",scrub:true,onUpdate:self=>{startPreload();const p=self.progress;if(ready&&!useFallback)draw(Math.round(p*(FRAME_COUNT-1)));for(const c of caps){const a=parseFloat(c.dataset.a),b=parseFloat(c.dataset.b),mid=(a+b)/2,o=Math.min(smooth(a,a+(mid-a)*0.6,p),1-smooth(mid+(b-mid)*0.4,b,p));c.style.opacity=Math.max(0,o);c.style.transform="translateY("+(12*(1-Math.max(0,o)))+"px)";}}});
   })();
 
   // MENU — tabs + cards from BURGERATO_MENU (talabat data)
   (function initMenu(){
     const tabs=document.getElementById("menuTabs"),grid=document.getElementById("menuGrid");
     if(!tabs||!grid)return;
+    let buildTries=0;
     function build(){
-      if(typeof BURGERATO_MENU_EN==="undefined"){setTimeout(build,150);return;}
+      if(typeof BURGERATO_MENU_EN==="undefined"){if(++buildTries>60){document.getElementById("menu").style.display="none";return;}setTimeout(build,150);return;}
       var HEROES={cat:"⭐ Heroes",items:[{id:"smash",name:"Smash Burgerato Meal",desc:"Two fresh patties, molten cheddar and our secret sauce — with fries and a drink",price:32,oldPrice:-1,hasImg:true}]};
       var MENUX=[HEROES].concat(BURGERATO_MENU_EN);
       const num=n=>String(n);
@@ -634,7 +646,7 @@
         tabs.innerHTML="";
         MENUX.forEach((c,i)=>{
           const b=document.createElement("button");
-          b.className="mtab"+(i===active?" on":""); b.type="button"; b.setAttribute("role","tab");
+          b.className="mtab"+(i===active?" on":""); b.type="button"; b.setAttribute("role","tab"); b.setAttribute("aria-selected", i===active?"true":"false");
           b.textContent=c.cat; b.addEventListener("click",()=>{active=i;renderTabs();renderGrid();});
           tabs.appendChild(b);
         });
@@ -667,7 +679,6 @@
     video.addEventListener("ended",()=>load(pi+1));
     video.addEventListener("error",()=>{if(++attempts<playlist.length)load(pi+1);});
     let started=false; const start=()=>{if(started)return;started=true;load(0);};
-    ["pointerdown","keydown","wheel","touchstart"].forEach(ev=>window.addEventListener(ev,start,{once:true,passive:true}));
     if(hasGSAP&&!reduce){
       ScrollTrigger.create({trigger:sec,start:"top center",onEnter:start,onEnterBack:start});
       ScrollTrigger.create({trigger:sec,start:"top top",end:"bottom bottom",scrub:true,onUpdate:s=>{const p=s.progress;dim.style.opacity=smooth(0.34,0.66,p);content.style.opacity=smooth(0.40,0.72,p);content.style.transform="translateY("+(28*(1-smooth(0.40,0.72,p)))+"px)";}});

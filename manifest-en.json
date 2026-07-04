@@ -1,0 +1,19 @@
+{
+  "name": "Burgerato — Smash Burger",
+  "short_name": "Burgerato",
+  "description": "Burgerato Restaurant, Baniyas East — Abu Dhabi. Fresh smash burgers off the griddle.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./en.html",
+  "display": "browser",
+  "background_color": "#0B0805",
+  "theme_color": "#0B0805",
+  "icons": [
+    {
+      "src": "assets/touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

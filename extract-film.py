@@ -7,9 +7,9 @@ import numpy as np
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # (path, end_frame or None, dip_before: darken this clip's first frames + prev clip's last frames)
 clips = [
-    ("assets/v1.mp4", None, False),
-    ("assets/v2.mp4", None, True),   # v1 end has spatula, v2 start doesn't -> beat dip
-    ("assets/v3.mp4", 87, False),    # trim before the crown lands (v4 replays the landing)
+    ("gen/videos/v1.mp4", None, False),
+    ("gen/videos/v2.mp4", None, True),   # v1 end has spatula, v2 start doesn't -> beat dip
+    ("gen/videos/v3.mp4", 87, False),    # trim before the crown lands (v4 replays the landing)
     ("assets/v4.mp4", None, False),
 ]
 out = "assets/seq"

@@ -22,18 +22,25 @@ R += [
   '<meta property="og:description" content="Two patties, molten cheddar, secret sauce. Full meal AED 32 — Baniyas, Abu Dhabi." />'),
 ]
 
+R += [
+ ('<meta property="og:locale" content="ar_AE" />', '<meta property="og:locale" content="en_US" />'),
+ ('<meta name="twitter:title" content="برجراتو — سماش برجر" />', '<meta name="twitter:title" content="Burgerato — Smash Burger" />'),
+ ('<meta name="twitter:description" content="طبقتان، شيدر ذائب، وصوص سرّي. وجبة كاملة بـ٣٢ درهماً — بني ياس، أبوظبي." />', '<meta name="twitter:description" content="Two patties, molten cheddar, secret sauce. Full meal AED 32 — Baniyas, Abu Dhabi." />'),
+ ('<link rel="manifest" href="manifest.json" />', '<link rel="manifest" href="manifest-en.json" />'),
+]
+
 # ---------- JSON-LD ----------
 R += [
  ('"name": "مطعم برجراتو — Burgerato Restaurant",', '"name": "Burgerato Restaurant",'),
- ('"streetAddress": "شارع المويجعي — شارع الناير",', '"streetAddress": "Al Dhayir Street, near Bawabat Al Sharq",'),
+ ('"streetAddress": "شارع المويجعي — شارع الناير",', '"streetAddress": "Al Muwaiji Street — Al Nayer Street, near Bawabat Al Sharq",'),
  ('"addressLocality": "بني ياس شرق",', '"addressLocality": "Baniyas East",'),
  ('"addressRegion": "أبوظبي",', '"addressRegion": "Abu Dhabi",'),
  ('{"@type": "Question", "name": "هل التوصيل متاح؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم — التوصيل حول بني ياس وضواحيها عبر تطبيق طلبات، أو مباشرة عبر واتساب المطعم 050 588 2658."}},',
   '{"@type": "Question", "name": "Is delivery available?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — delivery around Baniyas and nearby areas via Talabat, or directly via the restaurant WhatsApp 050 588 2658."}},'),
  ('{"@type": "Question", "name": "كم سعر وجبة السماش برجر؟", "acceptedAnswer": {"@type": "Answer", "text": "٣٢ درهماً وجبة كاملة — برجر سماش طبقتين مع البطاط والمشروب الغازي."}},',
   '{"@type": "Question", "name": "How much is the Smash burger meal?", "acceptedAnswer": {"@type": "Answer", "text": "AED 32 for a full meal — a double smash burger with fries and a soft drink."}},'),
- ('{"@type": "Question", "name": "أين يقع مطعم برجراتو؟", "acceptedAnswer": {"@type": "Answer", "text": "بني ياس شرق — الغابات، أبوظبي، الإمارات."}},',
-  '{"@type": "Question", "name": "Where is Burgerato located?", "acceptedAnswer": {"@type": "Answer", "text": "Al Dhayir Street, Baniyas East, Abu Dhabi, UAE. Open daily 1:00 PM to 2:00 AM."}},'),
+ ('{"@type": "Question", "name": "أين يقع المطعم؟ ومتى يفتح؟", "acceptedAnswer": {"@type": "Answer", "text": "شارع المويجعي — شارع الناير (قرب بوابة الشرق)، بني ياس شرق، أبوظبي. مفتوح يومياً من ١:٠٠ ظهراً حتى ٢:٠٠ فجراً."}},',
+  '{"@type": "Question", "name": "Where is the restaurant? When does it open?", "acceptedAnswer": {"@type": "Answer", "text": "Al Muwaiji Street — Al Nayer Street (near Bawabat Al Sharq), Baniyas East, Abu Dhabi. Open daily 1:00 PM to 2:00 AM."}},'),
  ('{"@type": "Question", "name": "كيف أطلب من برجراتو؟", "acceptedAnswer": {"@type": "Answer", "text": "عبر تطبيق طلبات، أو واتساب 050 588 2658، أو اتصال مباشر 02 585 84 95."}}',
   '{"@type": "Question", "name": "How do I order from Burgerato?", "acceptedAnswer": {"@type": "Answer", "text": "Via the Talabat app, WhatsApp 050 588 2658, or by phone 02 585 84 95."}}'),
 ]
@@ -71,8 +78,8 @@ R += [
   '<div class="cap" data-a="0.56" data-b="0.71">The secret sauce…<br/>then the crown lands</div>'),
  ('<div class="cap" data-a="0.79" data-b="0.98">وُلد سماش برجراتو</div>',
   '<div class="cap" data-a="0.79" data-b="0.98">The Burgerato Smash is born</div>'),
- ('<img class="film-fallback" src="assets/product-hero.jpg" alt="سماش برجراتو" />',
-  '<img class="film-fallback" src="assets/product-hero.jpg" alt="Burgerato Smash" />'),
+ ('<img class="film-fallback" src="assets/product-hero.jpg" alt="سماش برجراتو" loading="lazy" />',
+  '<img class="film-fallback" src="assets/product-hero.jpg" alt="Burgerato Smash" loading="lazy" />'),
 ]
 
 # ---------- reveal ----------
@@ -112,8 +119,8 @@ R += [
  ('<h2 class="gold-text">جوعك يستاهل سماش</h2>', '<h2 class="gold-text">Your Hunger Deserves a Smash</h2>'),
  ('<p>وجبة كاملة بـ<b>٣٢ درهماً</b> — برجر، بطاط، ومشروب. اطلبها الآن وتوصلك ساخنةً أينما كنت حول بني ياس.</p>',
   '<p>A full meal for <b>AED 32</b> — burger, fries and a drink. Order now and it arrives hot, anywhere around Baniyas.</p>'),
- ('<div class="apps"><b>يوصلك عبر:</b> <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">طلبات</a> <span>·</span> نون فود <span>·</span> كيتا <span>·</span> كريم <span>·</span> ديليفرو <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none">هاتف 02 585 84 95</a></div>',
-  '<div class="apps"><b>Delivered via:</b> <a href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">Talabat</a> <span>·</span> Noon Food <span>·</span> Keeta <span>·</span> Careem <span>·</span> Deliveroo <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none">Call 02 585 84 95</a></div>'),
+ ('<div class="apps"><b>يوصلك عبر:</b> <a href="https://www.talabat.com/ar/uae/restaurant/734212/burgerato?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">طلبات</a> <span>·</span> نون فود <span>·</span> كيتا <span>·</span> كريم <span>·</span> ديليفرو <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none" dir="ltr">02 585 84 95 ☎</a></div>',
+  '<div class="apps"><b>Delivered via:</b> <a href="https://www.talabat.com/uae/restaurant/734212/burgerato-bani-yas-east?aid=1762" target="_blank" rel="noopener" style="color:var(--gold-bright);text-decoration:none">Talabat</a> <span>·</span> Noon Food <span>·</span> Keeta <span>·</span> Careem <span>·</span> Deliveroo <span>·</span> <a href="tel:+97125858495" style="color:inherit;text-decoration:none" dir="ltr">☎ 02 585 84 95</a></div>'),
 ]
 
 # ---------- editions ----------
@@ -122,10 +129,10 @@ R += [
   '<div class="head"><span class="idx reveal">03 — The Heroes</span><h2 class="gold-text reveal">More Heroes on the Griddle</h2></div>'),
  ('<article class="ed-card reveal" data-cart-add="smash" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="سماش برجراتو" loading="lazy" /></div>\n          <div class="body"><h3>سماش برجراتو</h3><p>البطل نفسه — طبقتان، شيدر ذائب، وصوص سرّي.</p><span class="tag">وجبة · ٣٢ د.إ · اضغط للطلب</span></div></article>',
   '<article class="ed-card reveal" data-cart-add="smash" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/product-hero.jpg" alt="Burgerato Smash" loading="lazy" /></div>\n          <div class="body"><h3>Burgerato Smash</h3><p>The hero itself — two patties, molten cheddar, secret sauce.</p><span class="tag">Meal · AED 32 · Tap to order</span></div></article>'),
- ('<article class="ed-card reveal" data-cart-add="1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="حاشي برجراتو بالمشروم" loading="lazy" /></div>\n          <div class="body"><h3>حاشي برجراتو بالمشروم</h3><p>لحم حاشي طازج تحت صوص المشروم والبصل الكريمي — وتاج المايونيز علامتنا.</p><span class="tag">وجبة · ٤٥ د.إ · اضغط للطلب</span></div></article>',
-  '<article class="ed-card reveal" data-cart-add="1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="Mushroom Hashi Burgerato" loading="lazy" /></div>\n          <div class="body"><h3>Mushroom Hashi Burgerato</h3><p>Fresh camel meat under a creamy mushroom-onion sauce — crowned with our signature mayo dots.</p><span class="tag">Meal · AED 45 · Tap to order</span></div></article>'),
- ('<article class="ed-card reveal" data-cart-add="smash,1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="كومبو البطلين" loading="lazy" /></div>\n          <div class="body"><h3>كومبو البطلين</h3><p>سماش + حاشي المشروم معاً — للجوع الجماعي.</p><span class="tag">وجبتان · ٧٧ د.إ · اضغط للطلب</span></div></article>',
-  '<article class="ed-card reveal" data-cart-add="smash,1427974055" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="The Two Heroes Combo" loading="lazy" /></div>\n          <div class="body"><h3>The Two Heroes Combo</h3><p>Smash + Mushroom Hashi together — for serious hunger.</p><span class="tag">Two meals · AED 77 · Tap to order</span></div></article>'),
+ ('<article class="ed-card reveal" data-cart-add="1427974055" data-cart-note="1427974055:مع صوص المشروم والبصل الكريمي (with mushroom sauce)" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="حاشي برجراتو بالمشروم" loading="lazy" /></div>\n          <div class="body"><h3>حاشي برجراتو بالمشروم</h3><p>لحم حاشي طازج تحت صوص المشروم والبصل الكريمي — وتاج المايونيز علامتنا.</p><span class="tag">وجبة · ٤٥ د.إ · اضغط للطلب</span></div></article>',
+  '<article class="ed-card reveal" data-cart-add="1427974055" data-cart-note="1427974055:مع صوص المشروم والبصل الكريمي (with mushroom sauce)" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-1.jpg?v=2" alt="Mushroom Hashi Burgerato" loading="lazy" /></div>\n          <div class="body"><h3>Mushroom Hashi Burgerato</h3><p>Fresh camel meat under a creamy mushroom-onion sauce — crowned with our signature mayo dots.</p><span class="tag">Meal · AED 45 · Tap to order</span></div></article>'),
+ ('<article class="ed-card reveal" data-cart-add="smash,1427974055" data-cart-note="1427974055:مع صوص المشروم والبصل الكريمي (with mushroom sauce)" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="كومبو البطلين" loading="lazy" /></div>\n          <div class="body"><h3>كومبو البطلين</h3><p>سماش + حاشي المشروم معاً — للجوع الجماعي.</p><span class="tag">وجبتان · ٧٧ د.إ · اضغط للطلب</span></div></article>',
+  '<article class="ed-card reveal" data-cart-add="smash,1427974055" data-cart-note="1427974055:مع صوص المشروم والبصل الكريمي (with mushroom sauce)" role="button" tabindex="0"><div class="pic fallback-host"><img src="assets/edition-2.jpg?v=2" alt="The Two Heroes Combo" loading="lazy" /></div>\n          <div class="body"><h3>The Two Heroes Combo</h3><p>Smash + Mushroom Hashi together — for serious hunger.</p><span class="tag">Two meals · AED 77 · Tap to order</span></div></article>'),
 ]
 
 # ---------- menu section ----------
@@ -181,7 +188,7 @@ R += [
 # ---------- scripts: menu data + rendering + openNow ----------
 R += [
  ('<script src="assets/menu-data.js" defer></script>', '<script src="assets/menu-data-en.js" defer></script>'),
- ('if(typeof BURGERATO_MENU==="undefined"){setTimeout(build,150);return;}', 'if(typeof BURGERATO_MENU_EN==="undefined"){setTimeout(build,150);return;}'),
+ ('if(typeof BURGERATO_MENU==="undefined"){if(++buildTries>60){document.getElementById("menu").style.display="none";return;}setTimeout(build,150);return;}', 'if(typeof BURGERATO_MENU_EN==="undefined"){if(++buildTries>60){document.getElementById("menu").style.display="none";return;}setTimeout(build,150);return;}'),
  ('var MENUX=[HEROES].concat(BURGERATO_MENU);', 'var MENUX=[HEROES].concat(BURGERATO_MENU_EN);'),
  ("const AR=\"٠١٢٣٤٥٦٧٨٩\";\n      const num=n=>String(n).replace(/\\d/g,d=>AR[+d]);", "const num=n=>String(n);"),
  ("'<span class=\"mold\">'+num(it.oldPrice)+'</span><span class=\"moff\">خصم</span>'", "'<span class=\"mold\">'+num(it.oldPrice)+'</span><span class=\"moff\">OFF</span>'"),

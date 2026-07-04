@@ -9,7 +9,11 @@
   "background_color": "#0B0805",
   "theme_color": "#0B0805",
   "icons": [
-    { "src": "assets/logo-icon.png", "sizes": "1028x859", "type": "image/png", "purpose": "any" },
-    { "src": "assets/favicon.png", "sizes": "64x53", "type": "image/png" }
+    {
+      "src": "assets/touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }
