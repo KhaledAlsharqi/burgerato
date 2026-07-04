@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Burgerato — parallel image generation (kit: memory/06)
 cd "$(dirname "$0")" || exit 1
-mkdir -p gen assets/seq-src
+mkdir -p gen gen/seq-src
 MASTER="20ac79f3-af1a-492e-a119-5fce5c35391e"
 HASHI="0b3a2a35-8b10-4796-8982-257efdb7ee97"
 
@@ -28,15 +28,15 @@ gen() {
   echo "FAIL $name"; return 1
 }
 
-gen k1 assets/seq-src/k1.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
+gen k1 gen/seq-src/k1.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
   --prompt "A single loosely-packed ball of fresh raw ground beef resting on a hot dark steel griddle, oil shimmer and faint smoke, the beef matching the reference burger's meat. $SHARED" &
-gen k2 assets/seq-src/k2.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
+gen k2 gen/seq-src/k2.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
   --prompt "The same beef now smashed flat on the same hot dark steel griddle by a heavy steel spatula still pressing at the frame edge, crispy caramelized lacy edges forming, sizzling, a small burst of steam. $SHARED" &
-gen k3 assets/seq-src/k3.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
+gen k3 gen/seq-src/k3.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
   --prompt "The same seared smashed beef patty alone on the same dark griddle with a thick slice of cheddar draping mid-melt over it, molten cheddar drips matching the reference burger's cheese tone. $SHARED" &
-gen k4 assets/seq-src/k4.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
+gen k4 gen/seq-src/k4.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
   --prompt "The same two seared smashed patties now stacked with molten cheddar between them and creamy spice-flecked special sauce flowing on top, sitting on the toasted bottom brioche bun on dark slate; the glossy brioche crown hovers slightly above, about to land. $IDENT $SHARED" &
-gen k5 assets/seq-src/k5.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
+gen k5 gen/seq-src/k5.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
   --prompt "The completed double smash burger, EXACTLY the reference burger, centered in a hero pose with gentle steam. $IDENT $SHARED" &
 gen ritual assets/ritual.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
   --prompt "Two hands in black nitrile gloves presenting the exact reference burger on a dark rustic wooden board, rising steam, blurred dark restaurant background with warm amber bokeh lights. Only the gloved hands and forearms are visible, no faces, no other people. $IDENT $SHAREDH" &
@@ -48,4 +48,4 @@ gen cut assets/product-cut.png image_background_remover --image "$MASTER" &
 
 wait
 echo "=== DONE ==="
-ls -la assets/seq-src assets/*.jpg assets/*.png 2>/dev/null
+ls -la gen/seq-src assets/*.jpg assets/*.png 2>/dev/null

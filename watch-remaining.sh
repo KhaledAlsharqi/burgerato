@@ -2,7 +2,7 @@
 # Sequential generation of the REMAINING images only — skips existing files,
 # waits out the grace daily limit (30-min sleeps), never wastes quota on retries of the same rejection.
 cd "$(dirname "$0")" || exit 1
-mkdir -p gen assets/seq-src
+mkdir -p gen gen/seq-src
 MASTER="20ac79f3-af1a-492e-a119-5fce5c35391e"
 HASHI="0b3a2a35-8b10-4796-8982-257efdb7ee97"
 
@@ -40,15 +40,15 @@ run() {
   done
 }
 
-run k5 assets/seq-src/k5.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
+run k5 gen/seq-src/k5.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
   --prompt "The completed double smash burger, EXACTLY the reference burger, centered in a hero pose with gentle steam. $IDENT $SHARED"
-run k1 assets/seq-src/k1.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
+run k1 gen/seq-src/k1.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
   --prompt "A single loosely-packed ball of fresh raw ground beef resting on a hot dark steel griddle, oil shimmer and faint smoke, the beef matching the reference burger's meat. $SHARED"
-run k4 assets/seq-src/k4.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
+run k4 gen/seq-src/k4.jpg nano_banana_2 --image "$MASTER" --aspect_ratio 16:9 --resolution 2k \
   --prompt "The same two seared smashed patties now stacked with molten cheddar between them and creamy spice-flecked special sauce flowing on top, sitting on the toasted bottom brioche bun on dark slate; the glossy brioche crown hovers slightly above, about to land. $IDENT $SHARED"
 run ed2 gen/edition-2-gen.jpg nano_banana_2 --image "$MASTER" --image "$HASHI" --aspect_ratio 4:3 --resolution 2k \
   --prompt "Both reference burgers side by side as a duo combo hero shot - the golden-bun double smash burger on the left and the black-bun camel burger on the right, a small pile of golden crispy fries between them on dark wood. $IDENT $SHARED"
 [ -s gen/edition-2-gen.jpg ] && cp gen/edition-2-gen.jpg assets/edition-2.jpg && echo "edition-2.jpg replaced with generated version"
 
 echo "=== ALL REMAINING IMAGES DONE — verify k1/k4/k5 visually, then bash gen-videos.sh ==="
-ls -la assets/seq-src assets/edition-2.jpg
+ls -la gen/seq-src assets/edition-2.jpg

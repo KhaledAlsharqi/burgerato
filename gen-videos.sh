@@ -5,7 +5,7 @@ cd "$(dirname "$0")" || exit 1
 mkdir -p gen
 
 for k in k1 k2 k3 k4 k5; do
-  [ -s "assets/seq-src/$k.jpg" ] || { echo "MISSING assets/seq-src/$k.jpg — run gen-images.sh first"; exit 1; }
+  [ -s "gen/seq-src/$k.jpg" ] || { echo "MISSING gen/seq-src/$k.jpg — run gen-images.sh first"; exit 1; }
 done
 
 VOPTS=(--aspect_ratio 16:9 --resolution 1080p --duration 5 --bitrate_mode high --generate_audio false --mode std)
@@ -27,17 +27,17 @@ gen() {
 
 LOCK="Locked camera, slow motion, no cuts, no flicker, no morphing artifacts."
 
-gen v1 assets/v1.mp4 --start-image assets/seq-src/k1.jpg --end-image assets/seq-src/k2.jpg \
+gen v1 assets/v1.mp4 --start-image gen/seq-src/k1.jpg --end-image gen/seq-src/k2.jpg \
   --prompt "The steel spatula slowly smashes the beef ball flat on the hot dark griddle; crispy lacy edges spread outward; sizzling steam. $LOCK" &
-gen v2 assets/v2.mp4 --start-image assets/seq-src/k2.jpg --end-image assets/seq-src/k3.jpg \
+gen v2 assets/v2.mp4 --start-image gen/seq-src/k2.jpg --end-image gen/seq-src/k3.jpg \
   --prompt "A slice of cheddar is laid onto the seared smashed patty and slowly begins to melt and drape over it. $LOCK" &
 wait
-gen v3 assets/v3.mp4 --start-image assets/seq-src/k3.jpg --end-image assets/seq-src/k4.jpg \
+gen v3 assets/v3.mp4 --start-image gen/seq-src/k3.jpg --end-image gen/seq-src/k4.jpg \
   --prompt "The molten-cheese patty is stacked onto the second patty on the toasted bottom bun; creamy special sauce pours slowly on top; the glossy brioche crown enters hovering above. $LOCK" &
-gen v4 assets/v4.mp4 --start-image assets/seq-src/k4.jpg --end-image assets/seq-src/k5.jpg \
+gen v4 assets/v4.mp4 --start-image gen/seq-src/k4.jpg --end-image gen/seq-src/k5.jpg \
   --prompt "The glossy brioche crown lands softly on the stack; gentle steam wisps; a slight pull-back reveals the completed double smash burger hero. $LOCK" &
 wait
-gen cta assets/cta.mp4 --start-image assets/seq-src/k5.jpg --end-image assets/seq-src/k5.jpg \
+gen cta assets/cta.mp4 --start-image gen/seq-src/k5.jpg --end-image gen/seq-src/k5.jpg \
   --prompt "The completed double smash burger rotates very slowly in place, gentle steam wisps rise, a soft light sheen sweeps across the glossy bun. Seamless loop feel, locked framing, no cuts, no flicker."
 
 echo "=== VIDEOS DONE ==="
